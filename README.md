@@ -4,8 +4,8 @@ This cookbook examines all of the cookbooks in a node's `run_list` and extracts 
 
 ```json
 cookbook_versions => {
-  "cookbook_versions_test"=>"0.1.0",
-  "cookbook_versions"=>"0.1.0"
+  "cookbook_versions_test": "0.1.0",
+  "cookbook_versions": "0.1.0"
 }
 ```
 
