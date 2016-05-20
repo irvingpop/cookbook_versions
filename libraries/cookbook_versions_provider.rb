@@ -4,6 +4,7 @@ require 'chef/provider/lwrp_base'
 class Chef
   class Provider
     class CookbookVersions < Chef::Provider::LWRPBase
+      provides :cookbook_versions
       use_inline_resources
 
       action :create do
