@@ -7,7 +7,11 @@ class Chef
       use_inline_resources
 
       action :create do
-        cookbook_versions = versioned_run_list(run_context.cookbook_collection.keys, run_context.cookbook_collection)
+        if new_resource.all_cookbooks
+          cookbook_versions = versioned_run_list(run_context.cookbook_collection.keys, run_context.cookbook_collection)
+        else
+          cookbook_versions = versioned_run_list(run_context.loaded_recipes, run_context.cookbook_collection)
+        end
         log("cookbook_versions:  #{cookbook_versions}")
         node.set['cookbook_versions'] = cookbook_versions
         node.save
