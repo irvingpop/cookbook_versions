@@ -7,6 +7,7 @@ class Chef
       self.resource_name = :cookbook_versions
       actions :create
       default_action :create
+      attribute :all_cookbooks, :name_attribute => false, :kind_of => [TrueClass, FalseClass], :required => false, :default => false
     end
   end
 end
