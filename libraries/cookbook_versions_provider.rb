@@ -14,7 +14,7 @@ class Chef
           cookbook_versions = versioned_run_list(run_context.loaded_recipes, run_context.cookbook_collection)
         end
         log("cookbook_versions:  #{cookbook_versions}")
-        node.set['cookbook_versions'] = cookbook_versions
+        node.normal['cookbook_versions'] = cookbook_versions
         node.save
       end
 
